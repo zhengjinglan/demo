@@ -3,7 +3,7 @@ import requests
 import unittest
 
 class APITest11(unittest.TestCase):
-    #测试网站
+    #测试网站https://www.juhe.cn/docs
     url = "http://httpbin.org"
 
     #发送请求-get:header, get, url
