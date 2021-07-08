@@ -1,0 +1,13 @@
+#-
+#  - 1 #-表示list类型
+#  - 2
+#  - 3
+#  - 4
+dict:
+  name: 虚竹
+  age: 18
+  sex: 男
+dict2:
+  name: 虚竹
+  age: 18
+  sex: 男
