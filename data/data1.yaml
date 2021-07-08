@@ -4,10 +4,16 @@
 #  - 3
 #  - 4
 dict:
-  name: 虚竹
-  age: 18
-  sex: 男
-dict2:
-  name: 虚竹
-  age: 18
-  sex: 男
+  url: http://www.baidu.com
+  txt: 虚竹
+dict1:
+  url: http://www.baidu.com
+  txt: 大汉
+dict3:
+  url: http://www.baidu.com
+  txt: 小龙女
+
+#dict2:
+#  name: 虚竹1
+#  age: 18
+#  sex: 男
