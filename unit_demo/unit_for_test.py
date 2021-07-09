@@ -20,38 +20,45 @@ def read_file():
 @ddt
 class UnitForTest(unittest.TestCase):
     #前置条件（初始化）
-    def setUp(self) -> None:
-        self.driver = webdriver.Chrome()
-        self.driver.get('http://39.98.138.157/shopxo/index.php?s=/index/user/logininfo.html')
-        self.driver.implicitly_wait(10)
+    # def setUp(self) -> None:
+    #     self.driver = webdriver.Chrome()
+    #     self.driver.get('http://39.98.138.157/shopxo/index.php?s=/index/user/logininfo.html')
+    #     self.driver.implicitly_wait(10)
+    #
+    # #后置条件(执行完成关闭浏览器页面）
+    # def tearDown(self) -> None:
+    #     self.driver.quit()
+    #
+    # #定义测试用例校验账号密码2
+    # # @data(['666666', '123456'], ['123456', '123456'], ['123456', '666666']) #传多个参数要用中括号
+    # @data(*read_file())
+    # @unpack #解包 @装饰器
+    # def test_2(self, username, pwd):
+    #     self.driver.find_element_by_name('accounts').send_keys(username)
+    #     self.driver.find_element_by_name('pwd').send_keys(pwd)
+    #     self.driver.find_element_by_xpath('/html/body/div[4]/div/div[2]/div[2]/form/div[3]/button').click()
+    #     sleep(2)
+    #
+    # #一般函数，用于让测试用例调用的函数，只有在调用的时候才会生效
+    # def plus(self):
+    #     s = 1
+    #     b = 2
+    #     return s + b
 
-    #后置条件(执行完成关闭浏览器页面）
-    def tearDown(self) -> None:
-        self.driver.quit()
-
-    #定义测试用例校验账号密码2
-    # @data(['666666', '123456'], ['123456', '123456'], ['123456', '666666']) #传多个参数要用中括号
-    @data(*read_file())
-    @unpack #解包 @装饰器
-    def test_2(self, username, pwd):
-        self.driver.find_element_by_name('accounts').send_keys(username)
-        self.driver.find_element_by_name('pwd').send_keys(pwd)
-        self.driver.find_element_by_xpath('/html/body/div[4]/div/div[2]/div[2]/form/div[3]/button').click()
-        sleep(2)
-
-    #一般函数，用于让测试用例调用的函数，只有在调用的时候才会生效
-    def plus(self):
-        s = 1
-        b = 2
-        return s + b
-
-    #传入的参数是字典格式
+    #传入的参数是字典格式，不需要添加unpack进行数据的解包
     @file_data('test1.yaml')
     def test_1(self, **user):
         name = user.get('name')
         pwd = user.get('pwd')
         print(name)
         print(pwd)
+        # if name == 123456:
+        #     print('successful!')
+        # else:
+        #     print('fale')
+        self.assertEqual(123456, name, msg= '我是msg')
+        print('这是断言之后的打印内容')
+        self.assertAlmostEqual(9.023456789, 9.02345679, msg= '这是一个大约值')
 
 if __name__ == '__main__':
     unittest.main()
