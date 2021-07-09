@@ -62,22 +62,22 @@ class UnitForTest(unittest.TestCase):
     #无条件跳过本条用例执行
     # @unittest.skip("不想执行")
     def test_3(self):
-        print('1test3')
+        print('2test3')
     #有条件跳过本条用例  = false等于false的时候才会执行
     # @unittest.skipUnless(1 < 2, '这是unless的理由')
     def test_4(self):
-        print('1test4')
+        print('2test4')
     #有条件跳过本条用例 = true 等于true的时候才会执行
     # @unittest.skipIf(1 > 2 , '这是if理由')
     def test_5(self):
-        print('1test5')
+        print('2test5')
 
     # @unittest.expectedFailure
     def test_6(self):
-        print('1test6')
+        print('2test6')
         self.assertEqual(123123, 222222, msg= 'Not Equal')
     def test_7(self):
-        print('1test7')
+        print('2test7')
         self.assertEqual(123123, 222222, msg='Not Equal')
 # if __name__ == '__main__':
     # unittest.main()
