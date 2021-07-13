@@ -21,11 +21,15 @@ class LoginPage(BasePage):
 
 
     #核心业务流
-    def login(self, username, pwd):
+    def login(self, username, pwd, txt):
         self.visit()
         self.input_(self.user, username)
         self.input_(self.password, pwd)
         self.click(self.login_button)
+        # print(username, pwd, txt)
+        #添加一个返回值，用于获取断言的文本信息
+        txt = txt
+        return txt
 
 #调试代码
 # if __name__ == '__main__':

@@ -21,9 +21,11 @@ class TestCaseForSerch(unittest.TestCase):
         cls.driver.quit()
 
     @file_data('../data/user.yaml')
-    def test_1_login(self , username, password):
-        self.lp.login(username, password)
+    def test_1_login(self , username, password, ttt):
+        txt = self.lp.login(username, password, ttt)
+        # print(txt)
         sleep(3)
+        self.assertEqual(txt, ttt)
 
     @data('手机', '衣服', '电脑')
     def test_2_serch(self, txt):
